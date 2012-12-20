@@ -28,36 +28,36 @@ function admin_form(&$qa_content)
 	{
 		$saved=false;
 		
-		if (qa_clicked('plugin_email_formating_save_button')) {
-			qa_opt('plugin_email_formating_overrule_HTML_emails', (bool)qa_post_text('plugin_email_formating_overrule_HTML_emails'));
-			qa_opt('plugin_email_formating_body', qa_post_text('plugin_email_formating_body'));
+		if (qa_clicked('email_formating_save_button')) {
+			qa_opt('email_formating_overrule', (bool)qa_post_text('email_formating_overrule'));
+			qa_opt('email_formating_body', qa_post_text('email_formating_body'));
 			$saved=true;
 		}
 		
 		return array(
-			'ok' => $saved ? 'Tag descriptions settings saved' : null,
+			'ok' => $saved ? 'Email formating settings saved' : null,
 			
 			'fields' => array(
 				array(
 					'label' => 'enable also for HTML based emails',
 					'type' => 'checkbox',
-					'value' => qa_opt('plugin_email_formating_overrule_HTML_emails'),
-					'tags' => 'NAME="plugin_email_formating_overrule_HTML_emails"',
+					'value' => qa_opt('email_formating_overrule'),
+					'tags' => 'NAME="email_formating_overrule"',
 				),
 
 				array(
 					'label' => 'Body (^body and ^title will get value of plain text body and subject. ^site_title and ^site_url will be replaced with your site name and url, ^logo_url with the logo of your site) :',
 					'type' => 'text',
 					'rows' => '10',
-					'value' => qa_opt('plugin_email_formating_body'),
-					'tags' => 'NAME="plugin_email_formating_body"',
+					'value' => qa_opt('email_formating_body'),
+					'tags' => 'NAME="email_formating_body"',
 				),
 			),
 			
 			'buttons' => array(
 				array(
 					'label' => 'Save Changes',
-					'tags' => 'NAME="plugin_email_formating_save_button"',
+					'tags' => 'NAME="email_formating_save_button"',
 				),
 			),
 		);
@@ -66,9 +66,9 @@ function admin_form(&$qa_content)
 		function option_default($option) {
 
 			switch($option) {
-				case 'plugin_email_formating_overrule_HTML_emails':
+				case 'email_formating_overrule':
 				  return false;
-				case 'plugin_email_formating_body':
+				case 'email_formating_body':
 					return '<html><head>
 <meta http-equiv="Content-Type" content="text/html; charset=Windows-1252">
 <style type="text/css">
@@ -335,7 +335,7 @@ text-decoration:underline;
 
 </tr>
 <tr>
-<td colspan="5"><img height="23" alt="" width="600" border="0" src="http://ecofys.m4.mailplus.nl/images/header2.gif"></td>
+<td colspan="5"><img height="23" alt="" width="600" border="0" src="^site_url/qa-plugin/email-formating/header2.gif"></td>
 </tr>
 <tr>
 <td valign="top" align="left" width="10" bgcolor="#fff9e8">&nbsp;</td>
@@ -345,7 +345,7 @@ text-decoration:underline;
 
 </tr>
 <tr>
-<td valign="top" align="left" width="10" bgcolor="#fff9e8"><img height="12" alt="" width="10" border="0" src="http://ecofys.m4.mailplus.nl/images/header3.gif"></td>
+<td valign="top" align="left" width="10" bgcolor="#fff9e8"><img height="12" alt="" width="10" border="0" src="^site_url/qa-plugin/email-formating/header3.gif"></td>
 <td valign="top" align="left" width="390" bgcolor="#fff9e8">
 <table cellspacing="0" cellpadding="10" width="100%" border="0">
 <tbody>
@@ -373,7 +373,7 @@ text-decoration:underline;
 </tbody>
 </table>
 &nbsp;&nbsp;</td>
-<td valign="top" align="left" width="10" bgcolor="#fff9e8"><img height="12" alt="" width="10" border="0" src="http://ecofys.m4.mailplus.nl/images/header3.gif"></td>
+<td valign="top" align="left" width="10" bgcolor="#fff9e8"><img height="12" alt="" width="10" border="0" src="^site_url/qa-plugin/email-formating/header3.gif"></td>
 
 </tr>
 <tr>

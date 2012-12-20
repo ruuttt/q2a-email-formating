@@ -19,8 +19,8 @@
 */
 
 /*
-	Plugin Name: email-formating
-	Plugin URI: 
+	Plugin Name: Email Formating
+	Plugin URI: https://github.com/ruuttt/q2a-email-formating
 	Plugin Description: enables you to apply html based formatting to all e-mails send out.
 	Plugin Version: 1.0
 	Plugin Date: 2012-12-20

@@ -21,12 +21,12 @@
 	function qa_send_email($params)
 	{
 		require_once QA_INCLUDE_DIR.'qa-util-string.php';
-		if (!$params['html'] || qa_opt('plugin_email_formating_overrule_HTML_emails')){			 
+		if (!$params['html'] || qa_opt('email_formating_overrule')){			 
 			$body = "<p>".strtr(
 			  $params['html'] ? $params['body'] : qa_html($params['body']),
 			  array("\n"=>"</p><p>")
 			 )."</p>";
-	    $params['body'] = strtr(qa_opt('plugin_email_formating_body'), 
+	    $params['body'] = strtr(qa_opt('email_formating_body'), 
 	      array("^body" => $body,
 	       "^title"=> $params['subject'],
 	       "^site_title"=> qa_opt('site_title'),
