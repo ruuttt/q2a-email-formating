@@ -31,7 +31,7 @@
 	       "^title"=> $params['subject'],
 	       "^site_title"=> qa_opt('site_title'),
 	       "^site_url"=> qa_opt('site_url'),
-	       "^logo_url"=> qa_opt('logo_show') ? (qa_opt('site_url').qa_opt('logo_url')) : ' '
+	       "^logo_url"=> qa_opt('logo_show') ? qa_opt('site_url').qa_opt('logo_url') : ' '
 	       ));
 			$params['html'] = true;
 		}
