@@ -1,8 +1,10 @@
 q2a-email-formating
 ===================
 
-![Demo](screenshot.jpg )
+![Demo](screenshot.jpg "Screenshot of how your e-mails will look like after you apply the plugin")
 
+What is it
+===================
 Plugin for question2answer which enables you to apply html based formatting to all e-mails send out.
 
 How to Install
